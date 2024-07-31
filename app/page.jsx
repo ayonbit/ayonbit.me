@@ -3,21 +3,23 @@ import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 
 //Internal Dependencies
+import Photo from "@/components/Photo";
 import Socials from "@/components/Socials";
+import Stats from "@/components/Stats";
 //Home Page
 const Home = () => {
   return (
     <section className="h-full">
-      {" "}
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/*text */}
-          <div className="text-center xl:text-left">
+          <div className="text-center xl:text-left order-2 xl:order-none ">
             <span className="text-xl">Web Developer</span>
             <h1 className="h1">
               Hello I&apos;m <br />{" "}
               <span className="text-accent">Ayon Bit</span>
             </h1>
+            {/* Change this context for real */}
             <p className="max-w-[500px] mb-9 text-white/80">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
               earum voluptates id, aliquid tenetur quae ut consequuntur rerum,
@@ -45,9 +47,13 @@ const Home = () => {
             </div>
           </div>
           {/* photo*/}
-          <div>photo</div>
+          <div className="order-1 xl:order-none mb-8 xl:mb-0">
+            <Photo />
+          </div>
         </div>
       </div>
+      {/* Stats*/}
+      <Stats />
     </section>
   );
 };

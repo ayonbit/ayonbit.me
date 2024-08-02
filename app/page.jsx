@@ -21,9 +21,10 @@ const Home = () => {
             </h1>
             {/* Change this context for real */}
             <p className="max-w-[500px] mb-9 text-white/80">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
-              earum voluptates id, aliquid tenetur quae ut consequuntur rerum,
-              ipsa hic excepturi asperiores quasi ea!
+              Experienced software developer skilled in multiple programming
+              languages, collaborative, and effective at providing technical
+              guidance. Dedicated to staying current with industry trends and
+              motivated to create high-quality software.
             </p>
             {/* button and social media*/}
             <div className="flex flex-col xl:flex-row items-center gap-8">

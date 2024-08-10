@@ -2,6 +2,12 @@
 //dependencies
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@radix-ui/react-tooltip";
 import { easeIn, motion } from "framer-motion";
 import {
   FaBootstrap,
@@ -29,7 +35,7 @@ const about = {
   title: "About Me",
   description:
     "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima temporibus ad doloremque, placeat deleniti reprehenderit.",
-  inf: [
+  info: [
     {
       fieldName: "Name",
       fieldValue: "Ayon Bit",
@@ -106,18 +112,18 @@ const education = {
     "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati, in! Consequatur, tempora",
   items: [
     {
-      Institute: "JU-Jahangirnagar University",
+      Institute: "Jahangirnagar University",
       Degree: "Msc in Information Tecnology",
       Duration: "2019 - 2021",
     },
     {
       Institute:
-        "IUBAT - International University of Business Agriculture and Technology",
-      Degree: "Bsc in Electrical and Electronics Engineering",
+        "International University of Business Agriculture and Technology",
+      Degree: "Bsc in EEE",
       Duration: "2011 - 2016",
     },
     {
-      Institute: "Cisco",
+      Institute: "Cisco Academy",
       Degree: "Cisco Certified Network Associates",
       Duration: "2020",
     },
@@ -231,9 +237,9 @@ const resume = () => {
             <TabsTrigger value="about">About Me</TabsTrigger>
           </TabsList>
           {/* content */}
-          <div className="min-h-[70vh] w-full">
+          <div className="min-h-[70vh] w-full ">
             {/* experience */}
-            <TabsContent value="experience" className="w-full">
+            <TabsContent value="experience" className="w-full ">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold ">{experience.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
@@ -265,7 +271,7 @@ const resume = () => {
             </TabsContent>
 
             {/* education */}
-            <TabsContent value="education" className="w-full">
+            <TabsContent value="education" className="w-full ">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold ">{education.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
@@ -277,18 +283,15 @@ const resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-center gap-1"
+                          className="bg-[#232329] h-[300px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-center gap-1"
                         >
                           <span className="text-accent">{item.Duration}</span>
-                          <h3 className="text-sm max-w-[200px] min-h-[60px] text-center lg:text-left md:text-left">
+                          <h3 className="text-sm max-w-[300px] min-h-[60px] text-left lg:text-left md:text-left">
                             {item.Degree}
                           </h3>
-                          <div className="flex items-center gap-3">
+                          <div className="flex items-center gap-3 text-center">
                             {/* dot */}
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent "></span>
-                            <p className="text-white/60 text-sm">
-                              {item.Institute}
-                            </p>
+                            <p className="text-white/60">{item.Institute}</p>
                           </div>
                         </li>
                       );
@@ -299,12 +302,58 @@ const resume = () => {
             </TabsContent>
 
             {/* Skills */}
-            <TabsContent value="skills" className="w-full">
-              Skills
+            <TabsContent value="skills" className="w-full h-full">
+              <div className="flex flex-col gap-[30px]">
+                <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                  <h3 className="text-4xl font-bold">{skills.title}</h3>
+                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                    {skills.description}
+                  </p>
+                </div>
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
+                  {skills.skillList.map((skill, index) => {
+                    return (
+                      <li key={index}>
+                        <TooltipProvider delayDuration={100}>
+                          <Tooltip>
+                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center hover:text-accent transition-all duration-300 ">
+                              <div className="text-6xl ">{skill.icons}</div>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p className="capitalize">{skill.name}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </TabsContent>
             {/* about */}
-            <TabsContent value="about" className="w-full">
-              About Me
+            <TabsContent
+              value="about"
+              className="w-full text-center xl:text-left"
+            >
+              <div className="flex flex-col gap-[30px]">
+                <h3 className="text-4xl font-bold">{about.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  {about.description}
+                </p>
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
+                  {about.info.map((item, index) => {
+                    return (
+                      <li
+                        key={index}
+                        className="flex items-center justify-center xl:justify-start gap-4"
+                      >
+                        <span className="text-white/60">{item.fieldName}</span>
+                        <span className="text-md ">{item.fieldValue}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </TabsContent>
           </div>
         </Tabs>

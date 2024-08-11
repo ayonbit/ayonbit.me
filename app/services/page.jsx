@@ -70,7 +70,7 @@ const Services = () => {
                   </div>
                   <Link
                     href={services.href}
-                    className="w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:rotate-45'
+                    className="w-[70px] h-[70px] rounded-full bg-white hover:rotate-45 group-hover:bg-accent transition-all duration-500 flex justify-center items-center '
                   "
                   >
                     <BsArrowDownRight className="text-primary text-3xl" />

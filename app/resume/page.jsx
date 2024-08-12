@@ -42,11 +42,11 @@ const about = {
     },
     {
       fieldName: "Email",
-      fieldValue: "ayonbit@gmail.com",
+      fieldValue: "mkdir39A@proton.me",
     },
     {
       fieldName: "Phone",
-      fieldValue: "+88 01686354606",
+      fieldValue: "(+880) 1723 924834",
     },
     {
       fieldName: "Experience",

@@ -76,7 +76,7 @@ const projects = [
   },
 ];
 
-const work = () => {
+const Work = () => {
   const [project, setProject] = useState(projects[0]);
   const handleSlideChange = (swiper) => {
     //get current slide index
@@ -175,7 +175,8 @@ const work = () => {
                           src={project.image}
                           fill
                           className="object-cover rounded-sm"
-                          alt=""
+                          alt="{`${project.title} thumbnail`}"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw,33vw"
                         />
                       </div>
                     </div>
@@ -198,4 +199,4 @@ const work = () => {
   );
 };
 
-export default work;
+export default Work;

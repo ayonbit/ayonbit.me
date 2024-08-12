@@ -35,7 +35,7 @@ const info = [
 ];
 
 //main contact function
-const contact = () => {
+const Contact = () => {
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -57,10 +57,10 @@ const contact = () => {
               </p>
               {/* info */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="First Name" />
-                <Input type="lastname" placeholder="Last Name" />
+                <Input type="text" placeholder="First Name" />
+                <Input type="text" placeholder="Last Name" />
                 <Input type="email" placeholder="Email" />
-                <Input type="phone" placeholder="Phone" />
+                <Input type="tel" placeholder="Phone" />
               </div>
               {/* Select */}
               <Select>
@@ -113,4 +113,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;

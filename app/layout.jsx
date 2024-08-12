@@ -16,6 +16,11 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata = {
   title: "Ayon Bit",
   description: "Next Generation Web Devloper",
+  icons: {
+    icon: ["/favicon.ico"],
+    apple: ["/apple-touch-icon.png"],
+    shortcut: ["/apple-touch-icon.png"],
+  },
 };
 
 export default function RootLayout({ children }) {

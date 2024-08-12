@@ -11,11 +11,11 @@ import {
 
 //socila icons
 const socials = [
-  { icon: <FaGithub />, path: "" },
-  { icon: <FaFacebook />, path: "" },
-  { icon: <FaInstagram />, path: "" },
-  { icon: <FaTwitter />, path: "" },
-  { icon: <FaSkype />, path: "" },
+  { icon: <FaGithub />, path: "https://github.com/ayonbit" },
+  { icon: <FaFacebook />, path: "https://www.facebook.com/ayonbit" },
+  { icon: <FaInstagram />, path: "https://www.instagram.com/ayonbit" },
+  { icon: <FaTwitter />, path: "https://x.com/ayonbit" },
+  { icon: <FaSkype />, path: "skype:live:ayon.bit?chat" },
   { icon: <FaCoffee />, path: "" },
 ];
 
@@ -25,7 +25,12 @@ const Socials = ({ containerStyles, iconStyles }) => {
     <div className={containerStyles}>
       {socials.map((item, index) => {
         return (
-          <Link key={index} href={item.path} className={iconStyles}>
+          <Link
+            key={index}
+            href={item.path}
+            className={iconStyles}
+            target="_blank"
+          >
             {item.icon}
           </Link>
         );

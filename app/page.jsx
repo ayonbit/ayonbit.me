@@ -1,3 +1,4 @@
+"use client";
 //Dependencies
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
@@ -8,6 +9,19 @@ import Socials from "@/components/Socials";
 import Stats from "@/components/Stats";
 //Home Page
 const Home = () => {
+  //CV File Handler
+  const downloadCvHandler = () => {
+    const cvFile = "/assets/Ayon_Bit_CV.txt"; //cv url
+
+    // Create a temporary link element and trigger the download
+    const link = document.createElement("a");
+    link.href = cvFile;
+    link.download = "Ayon_Bit_CV.txt"; // Set the default file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">
@@ -32,6 +46,7 @@ const Home = () => {
                 variant="outline"
                 size="lg"
                 className=" uppercase flex items-center gap-2"
+                onClick={downloadCvHandler}
               >
                 <span>Download CV</span>
                 <FiDownload className="text-xl" />

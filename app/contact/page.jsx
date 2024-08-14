@@ -29,7 +29,7 @@ const info = [
   {
     icon: <FaEnvelope />,
     title: "Email",
-    description: "mkdir39A@proton.me",
+    description: "ayonbit@gmail.com",
   },
   {
     icon: <FaMapMarkedAlt />,
@@ -101,7 +101,7 @@ const Contact = () => {
 
     try {
       const response = await axios.post("/api/contact", formData);
-      toast.success("Form submitted successfully!");
+      toast.success(response.data.message);
     } catch (error) {
       console.error("Error sending message", error);
       setErrorMessage("Failed to send message.");

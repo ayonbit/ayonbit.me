@@ -57,7 +57,7 @@ const Services = () => {
             return (
               <div
                 key={index}
-                className="flex-1 flex flex-col justify-center gap-6 group "
+                className="flex-1 flex flex-col justify-center gap-6 group overflow-hidden shadow-lg rounded-md bg-neutral-100/5 p-10 "
               >
                 {/* top */}
                 <div className="w-full flex justify-between items-center">
@@ -81,9 +81,9 @@ const Services = () => {
                   {services.title}
                 </h2>
                 {/* description */}
-                <p className="text-white/60">{services.description}</p>
+                <p className="text-white/80">{services.description}</p>
                 {/* description */}
-                <div className="border-b border-white/20 w-full"></div>
+                <div className="border-b border-white/80 w-full"></div>
               </div>
             );
           })}

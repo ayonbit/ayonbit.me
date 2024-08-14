@@ -5,6 +5,7 @@ import {
   FaFacebook,
   FaGithub,
   FaInstagram,
+  FaLinkedin,
   FaSkype,
   FaTwitter,
 } from "react-icons/fa";
@@ -17,6 +18,7 @@ const socials = [
   { icon: <FaTwitter />, path: "https://x.com/ayonbit" },
   { icon: <FaSkype />, path: "skype:live:ayon.bit?chat" },
   { icon: <FaCoffee />, path: "" },
+  { icon: <FaLinkedin />, path: "" },
 ];
 
 //Social component

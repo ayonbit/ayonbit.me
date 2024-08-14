@@ -34,7 +34,7 @@ import {
 const about = {
   title: "About Me",
   description:
-    "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima temporibus ad doloremque, placeat deleniti reprehenderit.",
+    "I'm Ayon Bit, a full-stack developer specializing in NodeJS, ReactJS, JavaScript, and the MERN stack. With 6 years of experience as a DropShipping Expert in the e-commerce industry, I thrive on challenges—whether it's late-night problem-solving or embracing the growth that comes with experience. The process, with all its demands, is something I genuinely love and excel at.",
   info: [
     {
       fieldName: "Name",
@@ -42,11 +42,11 @@ const about = {
     },
     {
       fieldName: "Email",
-      fieldValue: "mkdir39A@proton.me",
+      fieldValue: "ayonbit@gmail.com",
     },
     {
       fieldName: "Phone",
-      fieldValue: "(+880) 1723 924834",
+      fieldValue: "(+880) XXXX XXXXXX",
     },
     {
       fieldName: "Experience",
@@ -54,7 +54,7 @@ const about = {
     },
     {
       fieldName: "Nationality",
-      fieldValue: "Bangladeshi",
+      fieldValue: "Bangladesh",
     },
     {
       fieldName: "Skype",
@@ -75,7 +75,7 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My Experience",
   description:
-    " Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quisquam laborum facere.",
+    " With over a decade of experience, I specialize in full-stack development, technical support, and e-commerce operations. Currently, I lead web application development at Incognito Solution Inc, using the latest technologies. My background includes managing support teams at Jot Form Inc and optimizing Shopify stores at Fly Limited Corp. I’m passionate about delivering high-quality solutions that drive business success.",
   items: [
     {
       Company: "Incognito Solution Inc",
@@ -109,7 +109,7 @@ const education = {
   icon: "/assets/resume/cap.svg",
   title: "My Education",
   description:
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati, in! Consequatur, tempora",
+    "I’m a full-stack developer with an MSc in IT and extensive experience in web development, technical support, and e-commerce optimization. I’m dedicated to delivering innovative and high-quality solutions.",
   items: [
     {
       Institute: "Jahangirnagar University",
@@ -143,8 +143,19 @@ const education = {
 //skills
 const skills = {
   title: "My Skills",
-  description:
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis vel unde add.",
+  description: (
+    <>
+      As a seasoned <strong>full-stack developer</strong> focusing on{" "}
+      <strong>NodeJS, ReactJS, JavaScript</strong>, and the{" "}
+      <strong>MERN stack</strong>, I bring a wealth of experience in building
+      robust, scalable web applications. My journey over the past six years as a{" "}
+      <strong>DropShipping Expert</strong> in the e-commerce industry has honed
+      my technical skills and deepened my understanding of the digital
+      marketplace. I am passionate about crafting high-quality solutions that
+      meet client expectations and user needs, and I thrive in environments
+      where innovation and problem-solving are at the forefront.
+    </>
+  ),
   skillList: [
     {
       icons: <FaHtml5 />,
@@ -242,7 +253,7 @@ const resume = () => {
             <TabsContent value="experience" className="w-full ">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold ">{experience.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className=" text-white/60 mx-auto xl:mx-0">
                   {experience.description}
                 </p>
                 <ScrollArea className="h-[400px]">
@@ -304,9 +315,9 @@ const resume = () => {
             {/* Skills */}
             <TabsContent value="skills" className="w-full h-full">
               <div className="flex flex-col gap-[30px]">
-                <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <div className="flex flex-col gap-[30px] text-center xl:text-left w-full">
                   <h3 className="text-4xl font-bold">{skills.title}</h3>
-                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  <p className=" text-white/60  mx-auto xl:mx-0 leading-loose">
                     {skills.description}
                   </p>
                 </div>
@@ -316,8 +327,11 @@ const resume = () => {
                       <li key={index}>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center hover:text-accent transition-all duration-300 ">
-                              <div className="text-6xl ">{skill.icons}</div>
+                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center hover:text-accent transition-all duration-300 shadow-lg ">
+                              <div className="flex flex-col justify-center items-center">
+                                <div className="text-6xl ">{skill.icons}</div>
+                                <p className="capitalize">{skill.name}</p>
+                              </div>
                             </TooltipTrigger>
                             <TooltipContent>
                               <p className="capitalize">{skill.name}</p>
@@ -337,7 +351,7 @@ const resume = () => {
             >
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className=" text-white/60 mx-auto xl:mx-0">
                   {about.description}
                 </p>
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">

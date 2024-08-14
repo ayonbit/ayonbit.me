@@ -13,28 +13,28 @@ const services = [
     title: "Web Devlopment",
     description:
       " Crafting dynamic web applications with cutting-edge MERN stack technology. From sleek user interfaces to robust back-end solutions, I deliver high-performance web development tailored to your needs. It’s concise and effectively communicates your specialization.",
-    href: "",
+    href: "/services/webdevelopment",
   },
   {
     num: "02",
     title: "UI/UX Design",
     description:
       " UI/UX Design focuses on creating intuitive and visually appealing interfaces that enhance user experience. My approach combines aesthetic design with functional usability, ensuring that every project not only looks great but also provides a seamless and engaging user journey. ",
-    href: "",
+    href: "/services/uiuxdesign",
   },
   {
     num: "03",
     title: "Shopify Dropshipping",
     description:
       " Shopify Dropshipping services streamline the process of launching and managing your online store by handling product sourcing, order fulfillment, and store optimization. I leverage my expertise to set up a seamless Shopify store that maximizes efficiency and drives sales, allowing you to focus on growing your business.",
-    href: "",
+    href: "/services/shopifymanagement",
   },
   {
     num: "04",
     title: "Administrative Support",
     description:
       " Administrative Support services streamline your daily operations by managing tasks like scheduling, communication, and data entry. I provide efficient and reliable support to help you focus on your core business activities while ensuring everything runs smoothly behind the scenes.",
-    href: "",
+    href: "/services/administrativesupport",
   },
 ];
 
@@ -88,9 +88,11 @@ const Services = () => {
                 <div className="border-b border-white/80 w-full"></div>
 
                 {/* Learn More Button */}
-                <button className="mt-4 px-4 py-2 bg-primary hover:bg-accent hover:text-primary  text-white rounded-md">
-                  Learn More
-                </button>
+                <Link href={services.href}>
+                  <button className=" px-4 py-2 bg-primary hover:bg-accent hover:text-primary  text-white rounded-md">
+                    Learn More
+                  </button>
+                </Link>
               </div>
             );
           })}

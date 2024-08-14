@@ -72,7 +72,6 @@ const about = {
 };
 //experience data
 const experience = {
-  icon: "/assets/resume/badge.svg",
   title: "My Experience",
   description:
     " With over a decade of experience, I specialize in full-stack development, technical support, and e-commerce operations. Currently, I lead web application development at Incognito Solution Inc, using the latest technologies. My background includes managing support teams at Jot Form Inc and optimizing Shopify stores at Fly Limited Corp. I’m passionate about delivering high-quality solutions that drive business success.",
@@ -106,7 +105,6 @@ const experience = {
 };
 //education data
 const education = {
-  icon: "/assets/resume/cap.svg",
   title: "My Education",
   description:
     "I’m a full-stack developer with an MSc in IT and extensive experience in web development, technical support, and e-commerce optimization. I’m dedicated to delivering innovative and high-quality solutions.",

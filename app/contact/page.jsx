@@ -16,7 +16,9 @@ import { Textarea } from "@/components/ui/textarea";
 import axios from "axios";
 import { easeIn, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 import { FaEnvelope, FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
+
 //info function in contact data
 const info = [
   {
@@ -99,10 +101,11 @@ const Contact = () => {
 
     try {
       const response = await axios.post("/api/contact", formData);
-      alert(response.data.message);
+      toast.success("Form submitted successfully!");
     } catch (error) {
       console.error("Error sending message", error);
       setErrorMessage("Failed to send message.");
+      toast.error("Failed to send message.");
     }
   };
 
@@ -173,7 +176,7 @@ const Contact = () => {
                   placeholder="First Name"
                 />
                 {errors.firstname && (
-                  <p className="text-red-500">{errors.firstname}</p>
+                  <p className="text-accent">{errors.firstname}</p>
                 )}
                 <Input
                   type="text"
@@ -183,7 +186,7 @@ const Contact = () => {
                   placeholder="Last Name"
                 />
                 {errors.lastname && (
-                  <p className="text-red-500">{errors.lastname}</p>
+                  <p className="text-accent">{errors.lastname}</p>
                 )}
                 <Input
                   type="email"
@@ -192,7 +195,7 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="Email"
                 />
-                {errors.email && <p className="text-red-500">{errors.email}</p>}
+                {errors.email && <p className="text-accent">{errors.email}</p>}
                 <Input
                   type="tel"
                   name="phone"
@@ -200,12 +203,12 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="Phone"
                 />
-                {errors.phone && <p className="text-red-500">{errors.phone}</p>}
+                {errors.phone && <p className="text-accent">{errors.phone}</p>}
               </div>
               <Select
                 name="service"
                 value={formData.service}
-                onChange={handleSelectChange}
+                onValueChange={handleSelectChange}
               >
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a Service" />
@@ -223,7 +226,7 @@ const Contact = () => {
                 </SelectContent>
               </Select>
               {errors.service && (
-                <p className="text-red-500">{errors.service}</p>
+                <p className="text-accent">{errors.service}</p>
               )}
               <Textarea
                 name="message"
@@ -233,7 +236,7 @@ const Contact = () => {
                 placeholder="Type your message here"
               />
               {errors.message && (
-                <p className="text-red-500">{errors.message}</p>
+                <p className="text-accent">{errors.message}</p>
               )}
               {/* btn */}
               <Button size="md" className="max-w-40">

@@ -13,10 +13,11 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 
+import axios from "axios";
 import { easeIn, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { FaEnvelope, FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
-
-//info function in contact
+//info function in contact data
 const info = [
   {
     icon: <FaPhoneAlt />,
@@ -36,6 +37,87 @@ const info = [
 ];
 
 const Contact = () => {
+  // Form data handling
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+  });
+
+  // Error handling
+  const [errors, setErrors] = useState({});
+  const [errorMessage, setErrorMessage] = useState("");
+
+  // Validation function
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.firstname) newErrors.firstname = "First name is required";
+    if (!formData.lastname) newErrors.lastname = "Last name is required";
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Email is invalid";
+    }
+    if (!formData.phone) newErrors.phone = "Phone number is required";
+    if (!formData.service) newErrors.service = "Service selection is required";
+    if (!formData.message) newErrors.message = "Message is required";
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrorMessage("Please fix the errors before submitting.");
+      return false;
+    }
+    return true;
+  };
+
+  // Form Handle Chnage
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  // Handle Select change
+  const handleSelectChange = (value) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      service: value,
+    }));
+  };
+
+  // Form submit handle
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+
+    try {
+      const response = await axios.post("/api/contact", formData);
+      alert(response.data.message);
+    } catch (error) {
+      console.error("Error sending message", error);
+      setErrorMessage("Failed to send message.");
+    }
+  };
+
+  // Clear error messages after 3 seconds
+  useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      const timer = setTimeout(() => {
+        setErrors({});
+        setErrorMessage("");
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [errors]);
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -77,35 +159,82 @@ const Contact = () => {
 
           {/* from */}
           <div className="xl:w-[100%]  order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
-              {/* info */}
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+            >
+              {/* Info */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="text" placeholder="First Name" />
-                <Input type="text" placeholder="Last Name" />
-                <Input type="email" placeholder="Email" />
-                <Input type="tel" placeholder="Phone" />
+                <Input
+                  type="text"
+                  name="firstname"
+                  value={formData.firstname}
+                  onChange={handleChange}
+                  placeholder="First Name"
+                />
+                {errors.firstname && (
+                  <p className="text-red-500">{errors.firstname}</p>
+                )}
+                <Input
+                  type="text"
+                  name="lastname"
+                  value={formData.lastname}
+                  onChange={handleChange}
+                  placeholder="Last Name"
+                />
+                {errors.lastname && (
+                  <p className="text-red-500">{errors.lastname}</p>
+                )}
+                <Input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Email"
+                />
+                {errors.email && <p className="text-red-500">{errors.email}</p>}
+                <Input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Phone"
+                />
+                {errors.phone && <p className="text-red-500">{errors.phone}</p>}
               </div>
-              {/* Select */}
-              <Select>
+              <Select
+                name="service"
+                value={formData.service}
+                onChange={handleSelectChange}
+              >
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a Service" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Select a Service</SelectLabel>
-                    <SelectItem value="est">Web Devlopment</SelectItem>
-                    <SelectItem value="cst">UI/UX Design</SelectItem>
-                    <SelectItem value="mst">Shopify</SelectItem>
-                    <SelectItem value="nst">Customer Service</SelectItem>
+                    <SelectItem value="webdev">Web Devlopment</SelectItem>
+                    <SelectItem value="uiux">UI/UX Design</SelectItem>
+                    <SelectItem value="shopify">Shopify</SelectItem>
+                    <SelectItem value="customer-service">
+                      Customer Service
+                    </SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
-              {/* Text Area */}
+              {errors.service && (
+                <p className="text-red-500">{errors.service}</p>
+              )}
               <Textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 className="h-[200px]"
                 placeholder="Type your message here"
               />
-
+              {errors.message && (
+                <p className="text-red-500">{errors.message}</p>
+              )}
               {/* btn */}
               <Button size="md" className="max-w-40">
                 Send Message

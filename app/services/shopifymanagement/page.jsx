@@ -1,6 +1,8 @@
-// pages/services/shopify-management.jsx
 "use client";
-//shopify Data
+//Dependencies
+import { easeIn, motion } from "framer-motion";
+
+//shopify Data function
 const shopify = [
   {
     title: "Shopify Store Design & Customization",
@@ -107,11 +109,18 @@ const ShopifyManagement = () => {
   return (
     <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
       <div className="container mx-auto">
-        <h1 className="text-4xl font-bold mb-4">Shopify Management</h1>
-        <p className="text-lg">
-          Detailed description for Shopify Management...
-        </p>
-        {/* Add more relevant content here */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            transition: {
+              delay: 2.4,
+              duration: 0.4,
+              ease: easeIn,
+            },
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-[68px]"
+        ></motion.div>
       </div>
     </section>
   );

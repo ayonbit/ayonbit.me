@@ -25,6 +25,7 @@ const links = [
     name: "contact",
     path: "/contact",
   },
+ 
 ];
 
 //Nav bar

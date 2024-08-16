@@ -1,6 +1,6 @@
 "use client";
 //Dependencies
-import { motion } from "framer-motion";
+import { easeIn, motion } from "framer-motion";
 //UiUx Data Funtion
 const uIuX = [
   {

@@ -23,23 +23,28 @@ const projects = [
   {
     num: "01",
     category: "Frontend",
-    title: "Project 1",
+    title: "Simple Responsive Website",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, esse.",
-    stack: [{ name: "HTML 5" }, { name: "Css 3" }, { name: "JavaScript" }],
-    image: "/assets/work/thumb1.png",
+      "Designed and developed a responsive website with a clean, modern layout that adapts seamlessly to various screen sizes",
+    stack: [
+      { name: "HTML 5" },
+      { name: "Css 3" },
+      { name: "JavaScript" },
+      { name: "Tailwind" },
+    ],
+    image: "/assets/work/thumb8.png",
     live: "",
     github: "",
   },
 
   {
     num: "02",
-    category: "FullStack",
-    title: "Project 2",
+    category: "Frontend",
+    title: "Furniture Shop",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, esse.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.Js" }],
-    image: "/assets/work/thumb2.png",
+      "Created a furniture shop website using the MERN stack, offering a responsive and interactive platform for browsing and purchasing products. Features include a custom product catalog, user authentication, shopping cart functionality, and secure payment processing.",
+    stack: [{ name: "Tailwind" }, { name: "NodeJs" }, { name: "NextJs" }],
+    image: "/assets/work/thumb6.png",
     live: "",
     github: "",
   },
@@ -47,13 +52,15 @@ const projects = [
   {
     num: "03",
     category: "FullStack",
-    title: "Project 3",
+    title: "E-commerce Website",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, esse.",
+      "Developed a fully-featured e-commerce platform with a focus on user experience and performance. The site includes dynamic product displays, secure payment integration, and a streamlined checkout process, delivering a seamless online shopping experience.",
     stack: [
-      { name: "Shopify" },
-      { name: "Tailwind.css" },
-      { name: "E-commerce" },
+      { name: "MonogoDb" },
+      { name: "ExpressJs" },
+      { name: "ReactJs" },
+      { name: "NodeJs" },
+      { name: "NextJs" },
     ],
     image: "/assets/work/thumb3.png",
     live: "",
@@ -61,16 +68,33 @@ const projects = [
   },
   {
     num: "04",
-    category: "Management",
-    title: "Project 4",
+    category: "Backend",
+    title: "Backend Dashboard",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, esse.",
+      "Built a robust backend dashboard using the MERN stack, providing administrators with a comprehensive interface to manage data, monitor user activity, and generate reports. The dashboard includes secure authentication, real-time updates, and an intuitive layout for efficient data management.",
+    stack: [
+      { name: "MonogoDb" },
+      { name: "ExpressJs" },
+      { name: "ReactJs" },
+      { name: "NodeJs" },
+      { name: "NextJs" },
+    ],
+    image: "/assets/work/thumb5.png",
+    live: "",
+    github: "",
+  },
+  {
+    num: "05",
+    category: "Shopify",
+    title: "Shopify Dropshipping Website",
+    description:
+      "Developed a fully functional Shopify dropshipping website, featuring a custom-designed theme tailored to the brand's identity.",
     stack: [
       { name: "Dropshipping" },
-      { name: "Tailwind.css" },
-      { name: "Node.Js" },
+      { name: "Shopify" },
+      { name: "UiUx Design" },
     ],
-    image: "/assets/work/thumb3.png",
+    image: "/assets/work/thumb8.png",
     live: "",
     github: "",
   },
@@ -101,10 +125,15 @@ const Work = () => {
               <div className="text-8xl leading-none font-extrabold text-transparent text-outline ">
                 {project.num}
               </div>
+              {/*project title*/}
+              <h4 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+                {project.title}
+              </h4>
               {/*project category */}
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+              <h2 className="text-[20px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
                 {project.category}
               </h2>
+
               {/*project description */}
               <p className="text-white/60">{project.description}</p>
               {/*stack */}

@@ -216,11 +216,15 @@ const Contact = () => {
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Select a Service</SelectLabel>
-                    <SelectItem value="webdev">Web Devlopment</SelectItem>
-                    <SelectItem value="uiux">UI/UX Design</SelectItem>
-                    <SelectItem value="shopify">Shopify</SelectItem>
-                    <SelectItem value="customer-service">
-                      Customer Service
+                    <SelectItem value="Web Development">
+                      Web Development
+                    </SelectItem>
+                    <SelectItem value="UiUx Design">UI/UX Design</SelectItem>
+                    <SelectItem value="Shopify">
+                      Shopify DropShipping
+                    </SelectItem>
+                    <SelectItem value="Administrative Support">
+                      Administrative Support
                     </SelectItem>
                   </SelectGroup>
                 </SelectContent>

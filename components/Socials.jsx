@@ -17,8 +17,11 @@ const socials = [
   { icon: <FaInstagram />, path: "https://www.instagram.com/ayonbit" },
   { icon: <FaTwitter />, path: "https://x.com/ayonbit" },
   { icon: <FaSkype />, path: "skype:live:ayon.bit?chat" },
-  { icon: <FaCoffee />, path: "" },
-  { icon: <FaLinkedin />, path: "" },
+  {
+    icon: <FaCoffee />,
+    path: "https://www.upwork.com/freelancers/~01810425a438c4f0a7?mp_source=share",
+  },
+  { icon: <FaLinkedin />, path: "https://www.fiverr.com/suprovatbit" },
 ];
 
 //Social component

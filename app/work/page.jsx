@@ -94,7 +94,7 @@ const projects = [
       { name: "Shopify" },
       { name: "UiUx Design" },
     ],
-    image: "/assets/work/thumb8.png",
+    image: "/assets/work/thumb7.png",
     live: "",
     github: "",
   },

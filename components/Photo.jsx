@@ -26,11 +26,13 @@ const Photo = () => {
           xl:h-[498px] mix-blend-lighten absolute"
         >
           <Image
-            src="/assets/photo.png " //change content
-            alt="profile_photo"
+            src="/assets/photo.png" //change content
+            alt="Profile photo of Ayon Bit"
             className="object-fill"
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw,33vw"
+            priority
+            loading="eager"
           />
         </motion.div>
 

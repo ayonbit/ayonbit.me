@@ -35,7 +35,7 @@ export async function POST(req) {
       <p style="font-size: 16px; font-weight: bold;">Best regards,</p>
       <h3 style="color: #444;">Ayon Bit</h3>
       <p style="font-size: 14px; color: #777;">Full-Stack Developer | Web Development Expert</p>
-      <p style="font-size: 14px; color: #777;">Website: <a href="https://ayonbit.me" style="color: #1e90ff;">https://ayonbit.me</a></p>
+      <p style="font-size: 14px; color: #777;">Website: <a href="https://ayonbitme.vercel.app" style="color: #1e90ff;">https://ayonbit.me</a></p>
     </div>
   </div>
   `;

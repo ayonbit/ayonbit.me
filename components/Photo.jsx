@@ -26,12 +26,10 @@ const Photo = () => {
           xl:h-[498px] mix-blend-lighten absolute"
         >
           <Image
-            src="/assets/photo.png" //change content
-            priority
-            quality={100}
-            fill
+            src="/assets/ayonnn.png " //change content
             alt="profile_photo"
-            className="object-contain"
+            className="object-fill"
+            fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw,33vw"
           />
         </motion.div>

@@ -1,5 +1,14 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
+## LIVE
+[https://ayonbitme.vercel.app](https://ayonbitme.vercel.app/)
+
+## Environment
+To create an environment file
+-create .env file in root directory
+in .env file create vairable EMAIL_USER,EMAIL_PASS andEMAIL_TO. config it in api\contact\route.js
+
 ## Getting Started
 
 First, run the development server:

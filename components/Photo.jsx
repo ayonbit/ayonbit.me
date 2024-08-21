@@ -26,7 +26,7 @@ const Photo = () => {
           xl:h-[498px] mix-blend-lighten absolute"
         >
           <Image
-            src="/assets/ayonnn.png " //change content
+            src="/assets/photo.png " //change content
             alt="profile_photo"
             className="object-fill"
             fill

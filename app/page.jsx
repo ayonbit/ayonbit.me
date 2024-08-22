@@ -23,7 +23,7 @@ const Home = () => {
   };
 
   return (
-    <section className="h-full">
+    <section className="min-h-full">
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/*text */}
@@ -53,7 +53,7 @@ const Home = () => {
               </Button>
               <div className="mb-8 xl:mb-0">
                 <Socials
-                  containerStyles="flex gap-6"
+                  containerStyles="grid grid-cols-4 gap-4 md:flex md:flex-row xl:flex-row"
                   iconStyles="w-9 h-9 border border-accent 
                   rounded-full flex justify-center items-center 
                   text-white hover:bg-white hover:text-primary 

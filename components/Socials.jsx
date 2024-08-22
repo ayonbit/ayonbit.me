@@ -8,6 +8,7 @@ import {
   FaLinkedin,
   FaSkype,
   FaTwitter,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 //socila icons
@@ -22,6 +23,7 @@ const socials = [
     path: "https://www.upwork.com/freelancers/~01810425a438c4f0a7?mp_source=share",
   },
   { icon: <FaLinkedin />, path: "https://www.fiverr.com/suprovatbit" },
+  { icon: <FaWhatsapp />, path: "" },
 ];
 
 //Social component

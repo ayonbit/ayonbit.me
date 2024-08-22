@@ -2,10 +2,9 @@
 //dependencies
 import { easeIn, motion } from "framer-motion";
 import { useState } from "react";
+import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 
 import {
   Tooltip,
@@ -27,8 +26,8 @@ const projects = [
     description:
       "Designed and developed a responsive website with a clean, modern layout that adapts seamlessly to various screen sizes",
     stack: [
-      { name: "HTML 5" },
-      { name: "Css 3" },
+      { name: "HTML5" },
+      { name: "Css3" },
       { name: "JavaScript" },
       { name: "Tailwind" },
     ],
@@ -115,18 +114,18 @@ const Work = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: easeIn },
       }}
-      className="main-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
+      className="main-h-[80vh] flex flex-col justify-center py-6 md:py-8 xl:py-12 overflow-hidden"
     >
-      <div className="container mx-auto">
+      <div className="container  mx-auto">
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none  ">
             <div className=" flex flex-col gap-[30px] h-[50%]">
               {/*outline num */}
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline ">
+              <div className="text-4xl md:text-6xl xl:text-8xl leading-none font-extrabold text-transparent text-outline">
                 {project.num}
               </div>
               {/*project title*/}
-              <h4 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+              <h4 className="text-2xl md:text-3xl xl:text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
                 {project.title}
               </h4>
               {/*project category */}
@@ -137,10 +136,10 @@ const Work = () => {
               {/*project description */}
               <p className="text-white/60">{project.description}</p>
               {/*stack */}
-              <ul className="flex gap-4">
+              <ul className="flex flex-wrap gap-2 md:gap-4">
                 {project.stack.map((item, index) => {
                   return (
-                    <li key={index} className="text-xl text-accent">
+                    <li key={index} className="text-lg md:text-xl text-accent">
                       {item.name}
                       {/*remove comma from the last*/}
                       {index !== project.stack.length - 1 && ","}
@@ -156,8 +155,8 @@ const Work = () => {
                 <Link href={project.live}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group ">
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent " />
+                      <TooltipTrigger className="w-[50px] h-[50px] md:w-[60px] md:h-[60px] xl:w-[70px] xl:h-[70px] rounded-full bg-white/5 flex justify-center items-center group ">
+                        <BsArrowUpRight className="text-white text-xl md:text-2xl xl:text-3xl group-hover:text-accent" />
                       </TooltipTrigger>
                       <TooltipContent>
                         <p>Live Project</p>
@@ -172,7 +171,7 @@ const Work = () => {
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group ">
                         <BsGithub className="text-white text-3xl group-hover:text-accent " />
                       </TooltipTrigger>
-                      <TooltipContent>
+                      <TooltipContent aria-describedby="dialog-description">
                         <p>Github Repository</p>
                       </TooltipContent>
                     </Tooltip>
@@ -183,9 +182,13 @@ const Work = () => {
           </div>
           <div className="w-full xl:w-[50%]  ">
             <Swiper
-              spaceBetween={30}
+              spaceBetween={10}
+              breakpoints={{
+                640: { spaceBetween: 20 },
+                1024: { spaceBetween: 30 },
+              }}
               slidesPerView={1}
-              className="xl:h-[520px] mb-12"
+              className="xl:h-[520px] mb-4"
               onSlideChange={handleSlideChange}
             >
               {projects.map((project, index) => {
@@ -204,8 +207,9 @@ const Work = () => {
                           src={project.image}
                           fill
                           className="object-cover rounded-sm"
-                          alt="{`${project.title} thumbnail`}"
+                          alt={`${project.title} thumbnail`}
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw,33vw"
+                          priority={index === 0}
                         />
                       </div>
                     </div>

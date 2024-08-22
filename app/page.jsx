@@ -7,6 +7,7 @@ import { FiDownload } from "react-icons/fi";
 import Photo from "@/components/Photo";
 import Socials from "@/components/Socials";
 import Stats from "@/components/Stats";
+
 //Home Page
 const Home = () => {
   //CV File Handler
@@ -23,7 +24,7 @@ const Home = () => {
   };
 
   return (
-    <section className="min-h-full">
+    <section className="min-h-screen overflow-hidden">
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/*text */}
@@ -45,7 +46,7 @@ const Home = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className=" uppercase flex items-center gap-2"
+                className="uppercase flex items-center gap-2"
                 onClick={downloadCvHandler}
               >
                 <span>Download CV</span>

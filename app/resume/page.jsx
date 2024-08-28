@@ -1,6 +1,6 @@
 "use client";
-//dependencies
-import { ScrollArea } from "@/components/ui/scroll-area";
+
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"; // Adjust import path if necessary
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Tooltip,
@@ -30,51 +30,26 @@ import {
   SiWordpress,
 } from "react-icons/si";
 
-//about data
 const about = {
   title: "About Me",
   description:
-    "I'm Ayon Bit, a full-stack developer specializing in NodeJS, ReactJS, JavaScript, and the MERN stack. With 6 years of experience as a DropShipping Expert in the e-commerce industry, I thrive on challenges—whether it's late-night problem-solving or embracing the growth that comes with experience. The process, with all its demands, is something I genuinely love and excel at.",
+    "I'm Ayon Bit, a full-stack developer specializing in NodeJS, ReactJS, JavaScript, and the MERN stack. With 6 years of experience as a DropShipping Expert in the e-commerce industry, I thrive on challenges—whether it's late-night problem-solving or embracing the growth that comes with experience. ",
   info: [
-    {
-      fieldName: "Name",
-      fieldValue: "Ayon Bit",
-    },
-    {
-      fieldName: "Email",
-      fieldValue: "ayonbit@gmail.com",
-    },
-    {
-      fieldName: "Phone",
-      fieldValue: "(+880) XXXX XXXXXX",
-    },
-    {
-      fieldName: "Experience",
-      fieldValue: "6+ years",
-    },
-    {
-      fieldName: "Nationality",
-      fieldValue: "Bangladesh",
-    },
-    {
-      fieldName: "Skype",
-      fieldValue: "ayon.bit",
-    },
-    {
-      fieldName: "Freelance",
-      fieldValue: "Avilable",
-    },
-    {
-      fieldName: "Language",
-      fieldValue: "English,Bengali, Hindi",
-    },
+    { fieldName: "Name", fieldValue: "Ayon Bit" },
+    { fieldName: "Email", fieldValue: "ayonbit@gmail.com" },
+    { fieldName: "Phone", fieldValue: "(+880) XXXX XXXXXX" },
+    { fieldName: "Experience", fieldValue: "6+ years" },
+    { fieldName: "Nationality", fieldValue: "Bangladesh" },
+    { fieldName: "Skype", fieldValue: "ayon.bit" },
+    { fieldName: "Freelance", fieldValue: "Available" },
+    { fieldName: "Language", fieldValue: "English, Bengali, Hindi" },
   ],
 };
-//experience data
+
 const experience = {
   title: "My Experience",
   description:
-    " With over a decade of experience, I specialize in full-stack development, technical support, and e-commerce operations. Currently, I lead web application development at Incognito Solution Inc, using the latest technologies. My background includes managing support teams at Jot Form Inc and optimizing Shopify stores at Fly Limited Corp. I’m passionate about delivering high-quality solutions that drive business success.",
+    "With over a decade of experience, I specialize in full-stack development, technical support, and e-commerce operations. Currently, I lead web application development at Incognito Solution Inc, using the latest technologies. My background includes managing support teams at Jot Form Inc and optimizing Shopify stores at Fly Limited Corp. I’m passionate about delivering high-quality solutions that drive business success.",
   items: [
     {
       Company: "Incognito Solution Inc",
@@ -93,7 +68,7 @@ const experience = {
     },
     {
       Company: "Freelance Market Place",
-      Position: "Administrive Support",
+      Position: "Administrative Support",
       duration: "2013-2016",
     },
     {
@@ -103,7 +78,7 @@ const experience = {
     },
   ],
 };
-//education data
+
 const education = {
   title: "My Education",
   description:
@@ -111,18 +86,18 @@ const education = {
   items: [
     {
       Institute: "Jahangirnagar University",
-      Degree: "Msc in Information Tecnology",
+      Degree: "MSc in Information Technology",
       Duration: "2019 - 2021",
     },
     {
       Institute:
         "International University of Business Agriculture and Technology",
-      Degree: "Bsc in EEE",
+      Degree: "BSc in EEE",
       Duration: "2011 - 2016",
     },
     {
       Institute: "Cisco Academy",
-      Degree: "Cisco Certified Network Associates",
+      Degree: "Cisco Certified Network Associate",
       Duration: "2020",
     },
     {
@@ -131,14 +106,13 @@ const education = {
       Duration: "2019",
     },
     {
-      Institute: "Code Academy ",
+      Institute: "Code Academy",
       Degree: "Full Stack Web Development",
       Duration: "2017 - 2019",
     },
   ],
 };
 
-//skills
 const skills = {
   title: "My Skills",
   description: (
@@ -149,90 +123,46 @@ const skills = {
       robust, scalable web applications. My journey over the past six years as a{" "}
       <strong>DropShipping Expert</strong> in the e-commerce industry has honed
       my technical skills and deepened my understanding of the digital
-      marketplace. I am passionate about crafting high-quality solutions that
-      meet client expectations and user needs, and I thrive in environments
-      where innovation and problem-solving are at the forefront.
+      marketplace.
     </>
   ),
   skillList: [
-    {
-      icons: <FaHtml5 />,
-      name: "HTML5",
-    },
-    {
-      icons: <FaCss3 />,
-      name: "Css3",
-    },
-    {
-      icons: <FaBootstrap />,
-      name: "Bootstrap",
-    },
-    {
-      icons: <FaJs />,
-      name: "JavaScript",
-    },
-    {
-      icons: <SiTailwindcss />,
-      name: "Tailwind Css",
-    },
-    {
-      icons: <SiMongodb />,
-      name: "MongoDb",
-    },
-    {
-      icons: <SiExpress />,
-      name: "Express Js",
-    },
-    {
-      icons: <FaReact />,
-      name: "React Js",
-    },
-    {
-      icons: <FaNodeJs />,
-      name: "Node Js",
-    },
-    {
-      icons: <SiNextdotjs />,
-      name: "Next Js",
-    },
-    {
-      icons: <SiFirebase />,
-      name: "Firebase",
-    },
-
-    {
-      icons: <FaGithub />,
-      name: "Github",
-    },
-    {
-      icons: <FaFigma />,
-      name: "Figma",
-    },
-    {
-      icons: <SiShopify />,
-      name: "Shopify",
-    },
-    {
-      icons: <SiWordpress />,
-      name: "Wordpress",
-    },
-    {
-      icons: <SiCisco />,
-      name: "Cisco",
-    },
+    { icon: <FaHtml5 />, name: "HTML5" },
+    { icon: <FaCss3 />, name: "CSS3" },
+    { icon: <FaBootstrap />, name: "Bootstrap" },
+    { icon: <FaJs />, name: "JavaScript" },
+    { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+    { icon: <SiMongodb />, name: "MongoDB" },
+    { icon: <SiExpress />, name: "Express.js" },
+    { icon: <FaReact />, name: "React.js" },
+    { icon: <FaNodeJs />, name: "Node.js" },
+    { icon: <SiNextdotjs />, name: "Next.js" },
+    { icon: <SiFirebase />, name: "Firebase" },
+    { icon: <FaGithub />, name: "GitHub" },
+    { icon: <FaFigma />, name: "Figma" },
+    { icon: <SiShopify />, name: "Shopify" },
+    { icon: <SiWordpress />, name: "WordPress" },
+    { icon: <SiCisco />, name: "Cisco" },
   ],
 };
 
-//resume page
-const resume = () => {
+const Resume = () => {
+  const prefersReducedMotion =
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: easeIn },
-      }}
-      className="min-h-[80vh] flex items-center justify-center  xl:py-0 py-12"
+      initial={prefersReducedMotion ? {} : { opacity: 0 }}
+      animate={
+        prefersReducedMotion
+          ? {}
+          : {
+              opacity: 1,
+              transition: { delay: 2.4, duration: 0.4, ease: easeIn },
+            }
+      }
+      className="min-h-[80vh] flex items-center justify-center xl:py-0 py-12"
     >
       <div className="mx-auto container">
         <Tabs
@@ -241,76 +171,70 @@ const resume = () => {
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
             <TabsTrigger value="education">Education</TabsTrigger>
-            <TabsTrigger value="experience">Experience </TabsTrigger>
+            <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About Me</TabsTrigger>
           </TabsList>
-          {/* content */}
-          <div className="min-h-[70vh] w-full ">
-            {/* experience */}
-            <TabsContent value="experience" className="w-full ">
+
+          <div className="min-h-[70vh] w-full">
+            {/*experience*/}
+            <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold ">{experience.title}</h3>
-                <p className=" text-white/60 mx-auto xl:mx-0">
+                <h3 className="text-4xl font-bold">{experience.title}</h3>
+                <p className="text-white/60 mx-auto xl:mx-0">
                   {experience.description}
                 </p>
                 <ScrollArea className="h-[400px]">
+                  <ScrollBar orientation="vertical" />
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                    {experience.items.map((item, index) => {
-                      return (
-                        <li
-                          key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-center gap-1"
-                        >
-                          <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                            {item.Position}
-                          </h3>
-                          <div className="flex items-center gap-3">
-                            {/* dot */}
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent "></span>
-                            <p className="text-white/60">{item.Company}</p>
-                          </div>
-                        </li>
-                      );
-                    })}
+                    {experience.items.map((item, index) => (
+                      <li
+                        key={index}
+                        className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start text-center lg:text-left"
+                      >
+                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                          {item.Position}
+                        </h3>
+                        <div className="flex items-center gap-3">
+                          <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                          <p className="text-white/60">{item.Company}</p>
+                        </div>
+                        <p className="text-white/60">{item.duration}</p>
+                      </li>
+                    ))}
                   </ul>
                 </ScrollArea>
               </div>
             </TabsContent>
-
-            {/* education */}
-            <TabsContent value="education" className="w-full ">
+            {/*education*/}
+            <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold ">{education.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <h3 className="text-4xl font-bold">{education.title}</h3>
+                <p className="text-white/60 mx-auto xl:mx-0">
                   {education.description}
                 </p>
                 <ScrollArea className="h-[400px]">
+                  <ScrollBar orientation="vertical" />
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                    {education.items.map((item, index) => {
-                      return (
-                        <li
-                          key={index}
-                          className="bg-[#232329] h-[300px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-center gap-1"
-                        >
-                          <span className="text-accent">{item.Duration}</span>
-                          <h3 className="text-sm max-w-[300px] min-h-[60px] text-left lg:text-left md:text-left">
-                            {item.Degree}
-                          </h3>
-                          <div className="flex items-center gap-3 text-center">
-                            {/* dot */}
-                            <p className="text-white/60">{item.Institute}</p>
-                          </div>
-                        </li>
-                      );
-                    })}
+                    {education.items.map((item, index) => (
+                      <li
+                        key={index}
+                        className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start text-center lg:text-left"
+                      >
+                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                          {item.Degree}
+                        </h3>
+                        <div className="flex items-center gap-3">
+                          <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                          <p className="text-white/60">{item.Institute}</p>
+                        </div>
+                      </li>
+                    ))}
                   </ul>
                 </ScrollArea>
               </div>
             </TabsContent>
-
-            {/* Skills */}
+            {/*skills*/}
             <TabsContent value="skills" className="w-full h-full">
               <div className="flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left w-full">
@@ -327,7 +251,7 @@ const resume = () => {
                           <Tooltip>
                             <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center hover:text-accent transition-all duration-300 shadow-lg ">
                               <div className="flex flex-col justify-center items-center">
-                                <div className="text-6xl ">{skill.icons}</div>
+                                <div className="text-6xl ">{skill.icon}</div>
                                 <p className="capitalize">{skill.name}</p>
                               </div>
                             </TooltipTrigger>
@@ -342,7 +266,7 @@ const resume = () => {
                 </ul>
               </div>
             </TabsContent>
-            {/* about */}
+            {/*about*/}
             <TabsContent
               value="about"
               className="w-full text-center xl:text-left"
@@ -374,4 +298,4 @@ const resume = () => {
   );
 };
 
-export default resume;
+export default Resume;

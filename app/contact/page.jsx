@@ -1,5 +1,6 @@
 "use client";
-//dependencies
+
+// Dependencies
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -12,31 +13,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-
 import axios from "axios";
-import { easeIn, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { toast } from "react-hot-toast";
 import { FaEnvelope, FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
-
-//info function in contact data
-const info = [
-  {
-    icon: <FaPhoneAlt />,
-    title: "Phone",
-    description: "(+880) XXXX XXXXXX",
-  },
-  {
-    icon: <FaEnvelope />,
-    title: "Email",
-    description: "ayonbit@gmail.com",
-  },
-  {
-    icon: <FaMapMarkedAlt />,
-    title: "Address",
-    description: "Incognito Solution, Bangladesh",
-  },
-];
 
 const Contact = () => {
   // Form data handling
@@ -52,6 +32,28 @@ const Contact = () => {
   // Error handling
   const [errors, setErrors] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
+
+  // Memoized info function
+  const info = useMemo(
+    () => [
+      {
+        icon: <FaPhoneAlt />,
+        title: "Phone",
+        description: "(+880) XXXX XXXXXX",
+      },
+      {
+        icon: <FaEnvelope />,
+        title: "Email",
+        description: "ayonbit@gmail.com",
+      },
+      {
+        icon: <FaMapMarkedAlt />,
+        title: "Address",
+        description: "Incognito Solution, Bangladesh",
+      },
+    ],
+    []
+  );
 
   // Validation function
   const validateForm = () => {
@@ -122,14 +124,7 @@ const Contact = () => {
   }, [errors]);
 
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: easeIn },
-      }}
-      className="py-6 px-4 sm:px-6 md:px-8"
-    >
+    <section className="py-6 px-4 sm:px-6 md:px-8">
       <div className="container mx-auto">
         <div className="flex flex-col gap-8 xl:flex-row xl:gap-[30px]">
           {/* info */}
@@ -248,11 +243,14 @@ const Contact = () => {
               <Button size="md" className="w-full sm:w-auto max-w-xs mx-auto">
                 Send Message
               </Button>
+              {errorMessage && (
+                <p className="text-accent text-center">{errorMessage}</p>
+              )}
             </form>
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

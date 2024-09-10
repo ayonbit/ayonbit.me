@@ -15,6 +15,12 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
+//Image Import
+import Dashboard from "@/public/assets/work/dashboard.png";
+import EcomWeb from "@/public/assets/work/ecomWeb.png";
+import FurniShop from "@/public/assets/work/Furniture_shop.png";
+import SimResWeb from "@/public/assets/work/Responsive_Website.png";
+import ShopifyIg from "@/public/assets/work/Shopify.png";
 //own dependency
 import WorkSliderBtns from "@/components/WorkSliderBtns";
 //project work
@@ -22,7 +28,7 @@ const projects = [
   {
     num: "01",
     category: "Frontend",
-    title: "Simple Responsive Website",
+    title: "Responsive Website",
     description:
       "Designed and developed a responsive website with a clean, modern layout that adapts seamlessly to various screen sizes",
     stack: [
@@ -31,7 +37,7 @@ const projects = [
       { name: "JavaScript" },
       { name: "Tailwind" },
     ],
-    image: "/assets/work/thumb8.png",
+    image: SimResWeb,
     live: "",
     github: "",
   },
@@ -43,7 +49,7 @@ const projects = [
     description:
       "Created a furniture shop website using the MERN stack, offering a responsive and interactive platform for browsing and purchasing products. Features include a custom product catalog, user authentication, shopping cart functionality, and secure payment processing.",
     stack: [{ name: "Tailwind" }, { name: "NodeJs" }, { name: "NextJs" }],
-    image: "/assets/work/thumb6.png",
+    image: FurniShop,
     live: "",
     github: "",
   },
@@ -61,7 +67,7 @@ const projects = [
       { name: "NodeJs" },
       { name: "NextJs" },
     ],
-    image: "/assets/work/thumb3.png",
+    image: EcomWeb,
     live: "",
     github: "",
   },
@@ -78,7 +84,7 @@ const projects = [
       { name: "NodeJs" },
       { name: "NextJs" },
     ],
-    image: "/assets/work/thumb5.png",
+    image: Dashboard,
     live: "",
     github: "https://github.com/ayonbit/dashboard-app",
   },
@@ -93,7 +99,7 @@ const projects = [
       { name: "Shopify" },
       { name: "UiUx Design" },
     ],
-    image: "/assets/work/thumb7.png",
+    image: ShopifyIg,
     live: "",
     github: "",
   },
@@ -207,9 +213,11 @@ const Work = () => {
                           src={project.image}
                           fill
                           className="object-cover rounded-sm"
-                          alt={`${project.title} thumbnail`}
+                          alt={`${project.title} project_thumbnail`}
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw,33vw"
                           priority={index === 0}
+                          loading={index !== 0 ? "lazy" : "eager"}
+                          placeholder="blur"
                         />
                       </div>
                     </div>

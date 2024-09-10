@@ -1,5 +1,6 @@
 "use client";
 //dependencies
+import ProfileAvatar from "@/public/assets/profileavatar.png";
 import { motion } from "framer-motion";
 import Image from "next/image";
 //internal dependencies
@@ -26,13 +27,13 @@ const Photo = () => {
           xl:h-[498px] mix-blend-lighten absolute"
         >
           <Image
-            src="/assets/photo.png" //change content
-            alt="Profile photo of Ayon Bit"
+            src={ProfileAvatar} //change content
+            alt="profile_ayonbit"
             className="object-fill"
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw,33vw"
             priority
-            loading="eager"
+            placeholder="blur"
           />
         </motion.div>
 

@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata = {
   title: "Ayon Bit",
-  description: "Next Generation Web Devloper",
+  description: "Next Generation Web Developer",
   icons: {
     icon: ["/favicon.ico"],
     apple: ["/apple-touch-icon.png"],

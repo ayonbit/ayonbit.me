@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 
 ## LIVE
-[https://ayonbit.me](https://ayonbit,me)
+[https://ayonbit.me](https://ayonbit.me)
 
 ## Environment
 To create an environment file

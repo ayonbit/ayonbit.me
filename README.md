@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 
 ## LIVE
-[https://ayonbitme.vercel.app](https://ayonbitme.vercel.app/)
+[https://ayonbit.me](https://ayonbit.me)
 
 ## Environment
 To create an environment file

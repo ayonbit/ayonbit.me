@@ -1,11 +1,9 @@
 {
-  "extends": ["next/babel", "next/core-web-vitals"],
+  "extends": ["next/core-web-vitals", "next"],
   "rules": {
-    "react/no-unescaped-entites": "off",
+    "react/no-unescaped-entities": "off",
     "@typescript-eslint/quotes": "off",
     "quotes": [0],
-    "avoidEscaped": 0,
-    "allowTemplateLiterals": 0,
-    "no-useless-escape": 0
+    "no-useless-escape": "off"
   }
 }

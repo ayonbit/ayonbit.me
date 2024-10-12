@@ -55,7 +55,7 @@ const Home = () => {
                 <span>Download CV</span>
                 <FiDownload className="text-xl" />
               </Button>
-              <div className="mb-8 xl:mb-0">
+              <div className="mb- xl:mb-0">
                 <Socials
                   containerStyles="grid grid-cols-4 gap-4 md:flex md:flex-row xl:flex-row"
                   iconStyles="w-9 h-9 border border-accent 

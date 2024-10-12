@@ -36,11 +36,7 @@ const Contact = () => {
   // Memoized info function
   const info = useMemo(
     () => [
-      {
-        icon: <FaPhoneAlt />,
-        title: "Phone",
-        description: "(+880) XXXX XXXXXX",
-      },
+      
       {
         icon: <FaEnvelope />,
         title: "Email",

@@ -36,7 +36,6 @@ const Contact = () => {
   // Memoized info function
   const info = useMemo(
     () => [
-      
       {
         icon: <FaEnvelope />,
         title: "Email",
@@ -100,6 +99,15 @@ const Contact = () => {
     try {
       const response = await axios.post("/api/contact", formData);
       toast.success(response.data.message);
+      // Reset form data after successful submission
+      setFormData({
+        firstname: "",
+        lastname: "",
+        email: "",
+        phone: "",
+        service: "",
+        message: "",
+      });
     } catch (error) {
       console.error("Error sending message", error);
       setErrorMessage("Failed to send message.");

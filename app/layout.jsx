@@ -29,13 +29,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={jetbrainsMono.variable}>
-        <Header />
-        <StairTransition />
         <Toaster
           reverseOrder={true}
-          position="bottom-right"
-          toastOptions={{ duration: 3000 }}
+          position="top-right"
+          toastOptions={{ duration: 4000 }}
         />
+        <StairTransition />
+        <Header />
+
         <PageTransition>{children}</PageTransition>
         <Analytics />
         <SpeedInsights />

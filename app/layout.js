@@ -74,7 +74,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@ayonbit",
-    title: "Ayon Bit",
+    title: "Ayon Bit - Full Stack Web Developer",
     url: `${process.env.PUBLIC_BASE_URL}/`,
     description:
       "Experienced software developer skilled in multiple programming languages, collaborative, and effective at providing technical guidance. Dedicated to staying current with industry trends and motivated to create high-quality software.",
@@ -83,7 +83,7 @@ export const metadata = {
   facebook: {
     card: "summary_large_image",
     site: "@ayonbit",
-    title: "Ayon Bit",
+    title: "Ayon Bit - Full Stack Web Developer",
     url: `${process.env.PUBLIC_BASE_URL}/`,
     description:
       "Experienced software developer skilled in multiple programming languages, collaborative, and effective at providing technical guidance. Dedicated to staying current with industry trends and motivated to create high-quality software.",
@@ -91,17 +91,18 @@ export const metadata = {
   },
   openGraph: {
     type: "website",
-    siteName: "Incognito Solutions",
+    siteName: "Ayon Bit - Full Stack Web Developer",
     locale: "en_US",
     url: `${process.env.PUBLIC_BASE_URL}/`,
-    title: "Incognito Solutions",
-    description: "Next Generation Web Development",
+    title: "Ayon Bit - Full Stack Web Developer",
+    description:
+      "Experienced software developer skilled in multiple programming languages, collaborative, and effective at providing technical guidance. Dedicated to staying current with industry trends and motivated to create high-quality software.",
     images: [
       {
         url: `${process.env.PUBLIC_BASE_URL}/images/opengraph-image.png`,
         width: 1200,
         height: 630,
-        alt: "Incognito Solutions",
+        alt: "Ayon Bit - Full Stack Web Developer",
       },
     ],
   },

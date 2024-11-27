@@ -16,7 +16,8 @@ import { Textarea } from "@/components/ui/textarea";
 import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
 import { toast } from "react-hot-toast";
-import { FaEnvelope, FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
+import { FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
+
 
 const Contact = () => {
   // Form data handling

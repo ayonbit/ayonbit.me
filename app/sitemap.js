@@ -29,7 +29,7 @@ export default async function sitemap() {
     },
 
     {
-      url: `${baseUrl}/resume`,
+      url: `${baseUrl}/about`,
       changefreq: "yearly",
       priority: 0.8,
       lastmod: new Date().toISOString(),

@@ -14,8 +14,8 @@ const links = [
     path: "/services",
   },
   {
-    name: "resume",
-    path: "/resume",
+    name: "About",
+    path: "/about",
   },
   {
     name: "work",
@@ -25,7 +25,6 @@ const links = [
     name: "contact",
     path: "/contact",
   },
- 
 ];
 
 //Nav bar

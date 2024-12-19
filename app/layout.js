@@ -16,7 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL(process.env.PUBLIC_BASE_URL || "http://localhost:3000"),
+  metadataBase: new URL(process.env.BASE_URL || "http://localhost:3000"),
   title: {
     template: "%s - Ayon Bit",
     default: "Ayon Bit",
@@ -62,7 +62,7 @@ export const metadata = {
     "mern stack development",
     "mern stack development company",
   ],
-  authors: [{ name: "Ayon Bit", url: `${process.env.PUBLIC_BASE_URL}` }],
+  authors: [{ name: "Ayon Bit", url: `${process.env.BASE_URL}` }],
   creator: "Ayon Bit",
   publisher: "Ayon Bit",
   formatDetection: {
@@ -75,31 +75,31 @@ export const metadata = {
     card: "summary_large_image",
     site: "@ayonbit",
     title: "Ayon Bit - Full Stack Web Developer",
-    url: `${process.env.PUBLIC_BASE_URL}/`,
+    url: `${process.env.BASE_URL}/`,
     description:
       "Experienced software developer skilled in multiple programming languages, collaborative, and effective at providing technical guidance. Dedicated to staying current with industry trends and motivated to create high-quality software.",
-    image: `${process.env.PUBLIC_BASE_URL}/images/opengraph-image.png`,
+    image: `${process.env.BASE_URL}/images/opengraph-image.png`,
   },
   facebook: {
     card: "summary_large_image",
     site: "@ayonbit",
     title: "Ayon Bit - Full Stack Web Developer",
-    url: `${process.env.PUBLIC_BASE_URL}/`,
+    url: `${process.env.BASE_URL}/`,
     description:
       "Experienced software developer skilled in multiple programming languages, collaborative, and effective at providing technical guidance. Dedicated to staying current with industry trends and motivated to create high-quality software.",
-    image: `${process.env.PUBLIC_BASE_URL}/images/opengraph-image.png`,
+    image: `${process.env.BASE_URL}/images/opengraph-image.png`,
   },
   openGraph: {
     type: "website",
     siteName: "Ayon Bit - Full Stack Web Developer",
     locale: "en_US",
-    url: `${process.env.PUBLIC_BASE_URL}/`,
+    url: `${process.env.BASE_URL}/`,
     title: "Ayon Bit - Full Stack Web Developer",
     description:
       "Experienced software developer skilled in multiple programming languages, collaborative, and effective at providing technical guidance. Dedicated to staying current with industry trends and motivated to create high-quality software.",
     images: [
       {
-        url: `${process.env.PUBLIC_BASE_URL}/images/opengraph-image.png`,
+        url: `${process.env.BASE_URL}/images/opengraph-image.png`,
         width: 1200,
         height: 630,
         alt: "Ayon Bit - Full Stack Web Developer",
@@ -109,10 +109,10 @@ export const metadata = {
   linkedin: {
     card: "summary_large_image",
     site_name: "Incognito Solutions",
-    url: `${process.env.PUBLIC_BASE_URL}/`,
+    url: `${process.env.BASE_URL}/`,
     title: "Incognito Solutions",
     description: "Next Generation Web Development",
-    image: `${process.env.PUBLIC_BASE_URL}/images/opengraph-image.png`,
+    image: `${process.env.BASE_URL}/images/opengraph-image.png`,
   },
 };
 

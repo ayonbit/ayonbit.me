@@ -1,5 +1,5 @@
 export default async function sitemap() {
-  const baseUrl = `${process.env.PUBLIC_BASE_URL}`;
+  const baseUrl = `${process.env.BASE_URL}`;
 
   return [
     {

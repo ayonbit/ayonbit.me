@@ -5,8 +5,13 @@ import { usePathname } from "next/navigation";
 import { CiMenuFries } from "react-icons/ci";
 import { Button } from "./ui/button";
 //dependencies from internal component
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { v4 as uuidv4 } from "uuid"; // Import uuid library for unique ID generation
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 //routes for mobile view
 const links = [
@@ -35,32 +40,24 @@ const links = [
 //Mobile Nav menu
 const MobileNav = () => {
   const pathname = usePathname();
-  const uniqueId = uuidv4(); // Generate a unique ID for this instance
 
   return (
     <Sheet>
       <SheetTrigger className="flex justify-center items-center">
         <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
-      <SheetContent
-        className="flex flex-col"
-        aria-labelledby={`dialog-title-${uniqueId}`}
-        aria-describedby={`dialog-description-${uniqueId}`}
-      >
+      <SheetContent className="flex flex-col">
         {/*logo here */}
-        <div className="mt-32 mb-40 text-center text-2xl">
+        <SheetTitle className="mt-32 mb-40 text-center text-2xl">
           <Link href="/" aria-label="Home">
-            <h1
-              id={`dialog-title-${uniqueId}`}
-              className="text-white text-4xl font-semibold"
-            >
+            <h1 className="text-white text-4xl font-semibold">
               Ayon<span className="text-accent">.</span>
             </h1>
           </Link>
-        </div>
+        </SheetTitle>
 
         {/* mobile nav */}
-
+        <SheetDescription className="hidden"></SheetDescription>
         <nav className="flex flex-col justify-center items-center gap-8">
           {links.map((link, index) => (
             <Link

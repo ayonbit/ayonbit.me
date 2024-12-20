@@ -13,6 +13,7 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
   variable: "--font-jetbrainsMono",
+  display: "swap",
 });
 
 export const metadata = {
@@ -108,9 +109,9 @@ export const metadata = {
   },
   linkedin: {
     card: "summary_large_image",
-    site_name: "Incognito Solutions",
+    site_name: "Ayon Bit - Full Stack Web Developer",
     url: `${process.env.BASE_URL}/`,
-    title: "Incognito Solutions",
+    title: "Ayon Bit - Full Stack Web Developer",
     description: "Next Generation Web Development",
     image: `${process.env.BASE_URL}/images/opengraph-image.png`,
   },
@@ -119,6 +120,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <title>Ayon Bit - Full Stack Developer</title>
+        <meta
+          name="description"
+          content="Experienced software developer skilled in multiple programming languages."
+        />
+      </head>
       <body className={jetbrainsMono.variable}>
         <Toaster
           reverseOrder={true}

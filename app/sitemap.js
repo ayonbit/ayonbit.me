@@ -10,7 +10,7 @@ export default async function sitemap() {
     },
     {
       url: `${baseUrl}/services`,
-      changefreq: "monthly",
+      changefreq: "weekly",
       priority: 0.9,
       lastmod: new Date().toISOString(),
     },

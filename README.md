@@ -7,7 +7,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Environment
 To create an environment file
 -create .env file in root directory
-in .env file create vairable EMAIL_USER,EMAIL_PASS andEMAIL_TO. config it in api\contact\route.js
+in .env file create vairable 
 
 ## Getting Started
 

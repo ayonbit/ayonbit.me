@@ -24,20 +24,20 @@ const projects = [
     description:
       "Designed and developed a responsive website with a clean, modern layout that adapts seamlessly to various screen sizes",
     stack: ["HTML5", "CSS3", "JavaScript", "Tailwind"],
-    image: "/assets/work/Responsive_Website.png",
-    live: "",
-    github: "",
+    image: "/assets/work/ResponsiveWebsite.png",
+    live: "https://nextfullproject.vercel.app",
+    github: "https://github.com/ayonbit/nextfullproject",
   },
   {
     num: "02",
     category: "Frontend",
-    title: "Furniture Shop",
+    title: "E-commerce UI/UX",
     description:
-      "Created a furniture shop website using the MERN stack, offering a responsive and interactive platform for browsing and purchasing products.",
-    stack: ["Tailwind", "NodeJs", "NextJs"],
-    image: "/assets/work/Furniture_shop.png",
-    live: "",
-    github: "",
+      "Created a frontend E-commerce  UI/UX using the Nextjs, offering a responsive and interactive platform for browsing and purchasing products.",
+    stack: ["Tailwind", "ReactJs", "NextJs"],
+    image: "/assets/work/EcomFrontEnd.png",
+    live: "https://ayonecommerce.vercel.app",
+    github: "https://github.com/ayonbit/next-ecommerce",
   },
   {
     num: "03",
@@ -154,14 +154,15 @@ const Work = () => {
               {projects.map((project, index) => (
                 <SwiperSlide key={index}>
                   <div className="h-[460px] relative flex justify-center items-center bg-pink-50/20">
-                    <div className="absolute inset-0 bg-black/10"></div>
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-fit rounded-sm"
-                      priority={index === 0}
-                    />
+                    <div className="absolute inset-0 bg-black/10">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-fit rounded-xl"
+                        priority={index === 0}
+                      />
+                    </div>
                   </div>
                 </SwiperSlide>
               ))}

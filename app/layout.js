@@ -3,12 +3,13 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-//external dependencies
+// External Components
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
 import { Toaster } from "react-hot-toast";
-//fonts config
+
+// Font Configuration
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
@@ -16,10 +17,12 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+// Base URL with fallback
+const baseUrl =
+  process.env.BASE_URL?.replace(/\/$/, "") || "https://ayonbit.me";
+
 export const metadata = {
-  metadataBase: new URL(
-    process.env.BASE_URL?.replace(/\/$/, "") || "https://ayonbit.me"
-  ),
+  metadataBase: new URL(baseUrl),
   title: {
     template: "%s - Ayon Bit",
     default: "Ayon Bit",
@@ -35,37 +38,15 @@ export const metadata = {
     "web development",
     "front end developer",
     "website design",
-    "react",
-    "tailwindcss",
-    "website development",
     "backend developer",
     "ui developer",
-    "web development company",
-    "front end back end developer",
     "fullstack development",
-    "web dev",
-    "shopify developer",
-    "shopify dropshipping",
-    "dropshipping",
-    "customer support",
-    "shopify store",
-    "shopify website",
-    "shopify design",
-    "shopify website design",
-    "shopify store design",
-    "shopify store management",
-    "shopify management",
-    "shopify store setup",
-    "react",
-    "nextjs",
-    "fullstack",
-    "e-commerce",
-    "mern stack",
     "mern stack developer",
-    "mern stack development",
-    "mern stack development company",
+    "e-commerce",
+    "nextjs",
+    "shopify store management",
   ],
-  authors: [{ name: "Ayon Bit", url: `${process.env.BASE_URL}` }],
+  authors: [{ name: "Ayon Bit", url: baseUrl }],
   creator: "Ayon Bit",
   publisher: "Ayon Bit",
   formatDetection: {
@@ -78,67 +59,47 @@ export const metadata = {
     card: "summary_large_image",
     site: "@ayonbit",
     title: "Ayon Bit - Full Stack Web Developer",
-    url: `${process.env.BASE_URL}/`,
+    url: `${baseUrl}/`,
     description:
-      "Experienced software developer skilled in multiple programming languages, collaborative, and effective at providing technical guidance. Dedicated to staying current with industry trends and motivated to create high-quality software.",
-    image: `${process.env.BASE_URL}/images/opengraph-image.png`,
-  },
-  facebook: {
-    card: "summary_large_image",
-    site: "@ayonbit",
-    title: "Ayon Bit - Full Stack Web Developer",
-    url: `${process.env.BASE_URL}/`,
-    description:
-      "Experienced software developer skilled in multiple programming languages, collaborative, and effective at providing technical guidance. Dedicated to staying current with industry trends and motivated to create high-quality software.",
-    image: `${process.env.BASE_URL}/images/opengraph-image.png`,
+      "Experienced software developer skilled in multiple programming languages, collaborative, and effective at providing technical guidance.",
+    image: `${baseUrl}/images/opengraph-image.png`,
   },
   openGraph: {
     type: "website",
     siteName: "Ayon Bit - Full Stack Web Developer",
     locale: "en_US",
-    url: `${process.env.BASE_URL}/`,
+    url: `${baseUrl}/`,
     title: "Ayon Bit - Full Stack Web Developer",
     description:
-      "Experienced software developer skilled in multiple programming languages, collaborative, and effective at providing technical guidance. Dedicated to staying current with industry trends and motivated to create high-quality software.",
+      "Experienced software developer skilled in multiple programming languages, collaborative, and effective at providing technical guidance.",
     images: [
       {
-        url: `${process.env.BASE_URL}/images/opengraph-image.png`,
+        url: `${baseUrl}/images/opengraph-image.png`,
         width: 1200,
         height: 630,
         alt: "Ayon Bit - Full Stack Web Developer",
       },
     ],
   },
-  linkedin: {
-    card: "summary_large_image",
-    site_name: "Ayon Bit - Full Stack Web Developer",
-    url: `${process.env.BASE_URL}/`,
-    title: "Ayon Bit - Full Stack Web Developer",
-    description: "Next Generation Web Development",
-    image: `${process.env.BASE_URL}/images/opengraph-image.png`,
-  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <head>
-        <title>Ayon Bit - Full Stack Developer</title>
-        <meta
-          name="description"
-          content="Experienced software developer skilled in multiple programming languages."
-        />
-      </head>
+    <html lang="en" dir="ltr">
       <body className={jetbrainsMono.variable}>
+        {/* Toast Notifications */}
         <Toaster
-          reverseOrder={true}
+          reverseOrder
           position="top-right"
           toastOptions={{ duration: 4000 }}
         />
+
+        {/* Page Transitions & Header */}
         <StairTransition />
         <Header />
-
         <PageTransition>{children}</PageTransition>
+
+        {/* Vercel Analytics & Speed Insights */}
         <Analytics />
         <SpeedInsights />
       </body>

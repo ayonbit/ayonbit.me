@@ -1,5 +1,6 @@
 export default async function sitemap() {
-  const baseUrl = `${process.env.BASE_URL}`;
+  const baseUrl =
+    process.env.BASE_URL?.replace(/\/$/, "") || "https://ayonbit.me";
 
   return [
     {
@@ -20,14 +21,12 @@ export default async function sitemap() {
       priority: 0.9,
       lastmod: new Date().toISOString(),
     },
-
     {
       url: `${baseUrl}/work`,
       changefreq: "weekly",
       priority: 0.8,
       lastmod: new Date().toISOString(),
     },
-
     {
       url: `${baseUrl}/about`,
       changefreq: "yearly",

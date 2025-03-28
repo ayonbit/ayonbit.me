@@ -17,7 +17,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL(process.env.BASE_URL || "http://localhost:3000"),
+  metadataBase: new URL(
+    process.env.BASE_URL?.replace(/\/$/, "") || "https://ayonbit.me"
+  ),
   title: {
     template: "%s - Ayon Bit",
     default: "Ayon Bit",

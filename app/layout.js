@@ -25,21 +25,20 @@ export const metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     template: "%s | Ayon Bit - Full Stack Web Developer",
-    default: "Ayon Bit - Full Stack Web Developer | Next Js Specialist",
+    default: "Ayon Bit - Full Stack Web Developer",
   },
   description:
-    "Experienced software developer skilled in multiple programming languages, collaborative, and effective at providing technical guidance. Dedicated to staying current with industry trends and motivated to create high-quality software.",
+    "Experienced software developer skilled in multiple programming languages, collaborative, and effective at providing technical guidance.",
   keywords: [
     "Ayon Bit",
     "Full Stack Developer",
-    "Web Developer",
-    "MERN Stack Developer",
-    "NodeJS Developer",
     "ReactJS Developer",
+    "NodeJS Developer",
+    "Next.js Specialist",
     "JavaScript Expert",
-    "E-commerce Developer",
+    "MERN Stack Developer",
     "Website Design",
-    "Shopify Drop Shipping Expert",
+    "E-commerce Developer",
   ],
   authors: [{ name: "Ayon Bit", url: baseUrl }],
   creator: "Ayon Bit",
@@ -66,20 +65,9 @@ export const metadata = {
     },
   },
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
+    icon: [{ url: "/favicon.ico", sizes: "any", type: "image/x-icon" }],
     apple: [
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    other: [
-      {
-        rel: "mask-icon",
-        url: "/safari-pinned-tab.svg",
-        color: "#5bbad5",
-      },
     ],
   },
   twitter: {
@@ -115,7 +103,6 @@ export const metadata = {
         alt: "Ayon Bit - Full Stack Web Developer",
       },
     ],
-    emails: "your-email@example.com",
     profile: {
       firstName: "Ayon",
       lastName: "Bit",
@@ -123,7 +110,7 @@ export const metadata = {
     },
   },
   other: {
-    "google-site-verification": "your-verification-code",
+    "google-site-verification": "YOUR-ACTUAL-VERIFICATION-CODE",
     referrer: "strict-origin-when-cross-origin",
     "x-ua-compatible": "IE=edge,chrome=1",
   },
@@ -135,23 +122,31 @@ export default function RootLayout({ children }) {
     "@type": "Person",
     name: "Ayon Bit",
     url: baseUrl,
+    image: `${baseUrl}/images/opengraph-image.png`, // Add your profile image
     sameAs: [
       "https://twitter.com/ayonbit",
-      // Add other social profiles here
+      "https://github.com/ayonbit",
+      "https://www.linkedin.com/in/ayonbit",
     ],
     jobTitle: "Full Stack Web Developer",
+    worksFor: {
+      "@type": "Organization",
+      name: "Incognito Solution",
+      url: baseUrl,
+    },
     description: metadata.description,
   };
 
   return (
     <html lang="en" dir="ltr">
-      <body className={jetbrainsMono.variable}>
-        {/* Structured Data */}
+      <head>
+        {/* Structured Data for SEO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-
+      </head>
+      <body className={jetbrainsMono.variable}>
         {/* Toast Notifications */}
         <Toaster
           reverseOrder

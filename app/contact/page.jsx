@@ -1,21 +1,22 @@
 import ContactForm from "@/components/ContactForm";
 import { FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
-
+const baseUrl =
+  process.env.BASE_URL?.replace(/\/$/, "") || "https://ayonbit.me";
 export const metadata = {
   title: "Contact",
   description:
     "Get in touch with Ayon Bit, Full Stack Developer. Available for new projects and collaborations. Contact via email or the provided form.",
   alternates: {
-    canonical: `${process.env.BASE_URL}/contact`,
+    canonical: `${baseUrl}/contact`,
   },
   openGraph: {
     title: "Contact - Ayon Bit | Full Stack Developer",
     description:
       "Contact Ayon Bit for web development projects, technical consultations, or collaboration opportunities.",
-    url: `${process.env.BASE_URL}/contact`,
+    url: `${baseUrl}/contact`,
     images: [
       {
-        url: `${process.env.BASE_URL}/images/contact-og-image.png`,
+        url: `${baseUrl}/images/opengraph-image.png`,
         width: 1200,
         height: 630,
         alt: "Contact Ayon Bit - Full Stack Developer",
@@ -27,7 +28,7 @@ export const metadata = {
     title: "Contact - Ayon Bit | Full Stack Developer",
     description:
       "Get in touch with Ayon Bit for web development projects and technical consultations.",
-    images: [`${process.env.BASE_URL}/images/contact-twitter-image.png`],
+    images: [`${baseUrl}/images/opengraph-image.png`],
   },
   keywords: [
     "contact web developer",
@@ -52,7 +53,7 @@ const contactInfo = [
     icon: <FaMapMarkedAlt className="text-xl sm:text-2xl" aria-hidden="true" />,
     title: "Address",
     description: "Incognito Solution, Bangladesh",
-    schemaType: "address",
+    schemaType: "Dhaka,Bangladesh",
   },
 ];
 
@@ -62,7 +63,7 @@ const Contact = () => {
     "@type": "ContactPage",
     name: "Contact Ayon Bit",
     description: metadata.description,
-    url: `${process.env.BASE_URL}/contact`,
+    url: `${baseUrl}/contact`,
     potentialAction: {
       "@type": "ContactPoint",
       contactType: "customer service",

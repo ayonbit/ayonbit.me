@@ -7,17 +7,13 @@ export default function robots() {
       {
         userAgent: "*",
         allow: "/",
-        // Essential Next.js disallows
         disallow: [
-          "/_next/", // Next.js internal paths
-          "/api/", // API routes
-          "/private/", // Private sections
-          "/*.json$", // JSON files
+          "/_next/", // Blocks Next.js internal files
+          "/api/private/", // Blocks only private API routes (if any)
+          "/private/", // Blocks private sections
         ],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
-    // Optional but recommended for SEO
-    host: baseUrl,
   };
 }

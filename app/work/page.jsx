@@ -1,20 +1,21 @@
 import Work from "@/components/Work";
-
+const baseUrl =
+  process.env.BASE_URL?.replace(/\/$/, "") || "https://ayonbit.me";
 export const metadata = {
   title: "Portfolio | Recent Projects",
   description:
     "Explore my portfolio of recent web development projects including full-stack applications, e-commerce solutions, and UI/UX designs. See examples of my work with Next.js, React, Shopify, and more.",
   alternates: {
-    canonical: `${process.env.BASE_URL}/work`,
+    canonical: `${baseUrl}/work`,
   },
   openGraph: {
     title: "Portfolio - Ayon Bit | Web Development Projects",
     description:
       "Collection of professional web development projects showcasing full-stack applications and e-commerce solutions.",
-    url: `${process.env.BASE_URL}/work`,
+    url: `${baseUrl}/work`,
     images: [
       {
-        url: `${process.env.BASE_URL}/images/portfolio-og-image.png`,
+        url: `${baseUrl}/images/opengraph-image.png`,
         width: 1200,
         height: 630,
         alt: "Ayon Bit Portfolio - Web Development Projects",
@@ -28,7 +29,7 @@ export const metadata = {
     title: "Portfolio - Ayon Bit | Web Developer Projects",
     description:
       "Showcase of my recent web development work including full-stack and e-commerce projects.",
-    images: [`${process.env.BASE_URL}/images/portfolio-twitter-image.png`],
+    images: [`${baseUrl}/images/opengraph-image.png`],
   },
   keywords: [
     "web developer portfolio",
@@ -48,7 +49,7 @@ const portfolioSchema = {
   "@type": "ItemList",
   name: "Web Development Portfolio",
   description: "Collection of professional web development projects",
-  url: `${process.env.BASE_URL}/work`,
+  url: `${baseUrl}/work`,
   itemListElement: [
     {
       "@type": "ListItem",
@@ -56,7 +57,7 @@ const portfolioSchema = {
       item: {
         "@type": "CreativeWork",
         name: "E-commerce Project",
-        url: `${process.env.BASE_URL}/work#ecommerce-project`,
+        url: `${baseUrl}/work#ecommerce-project`,
         description: "Custom Shopify store with advanced functionality",
         keywords: "Shopify, e-commerce, web development",
       },
@@ -67,7 +68,7 @@ const portfolioSchema = {
       item: {
         "@type": "CreativeWork",
         name: "Web Application",
-        url: `${process.env.BASE_URL}/work#web-application`,
+        url: `${baseUrl}/work#web-application`,
         description: "Full-stack Next.js application with custom API",
         keywords: "Next.js, React, Node.js",
       },

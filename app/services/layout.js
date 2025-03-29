@@ -1,18 +1,20 @@
+const baseUrl =
+  process.env.BASE_URL?.replace(/\/$/, "") || "https://ayonbit.me";
 export const metadata = {
   title: "Services",
   description:
     "Comprehensive services including dynamic web development, UI/UX design, Shopify store management, and administrative support. Custom solutions for your business needs.",
   alternates: {
-    canonical: `${process.env.BASE_URL}/services`,
+    canonical: `${baseUrl}/services`,
   },
   openGraph: {
     title: "Services - Ayon Bit | Full Stack Developer",
     description:
       "Professional web development, e-commerce solutions, and technical services tailored to your business requirements.",
-    url: `${process.env.BASE_URL}/services`,
+    url: `${baseUrl}/services`,
     images: [
       {
-        url: `${process.env.BASE_URL}/images/services-og-image.png`,
+        url: `${baseUrl}/images/opengraph-image.png`,
         width: 1200,
         height: 630,
         alt: "Ayon Bit Services - Web Development & E-commerce Solutions",
@@ -26,7 +28,7 @@ export const metadata = {
     title: "Services - Ayon Bit | Web Development Expert",
     description:
       "Professional web development and e-commerce solutions including Shopify, Next.js, and custom web applications.",
-    images: [`${process.env.BASE_URL}/images/services-twitter-image.png`],
+    images: [`${baseUrl}/images/opengraph-image.png`],
   },
   keywords: [
     "web development services",
@@ -48,7 +50,7 @@ const serviceSchema = {
   provider: {
     "@type": "Person",
     name: "Ayon Bit",
-    url: `${process.env.BASE_URL}`,
+    url: `${baseUrl}`,
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",

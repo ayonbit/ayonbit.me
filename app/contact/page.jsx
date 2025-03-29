@@ -1,5 +1,5 @@
 import ContactForm from "@/components/ContactForm";
-import { FaEnvelope, FaMapMarkedAlt, FaPhone } from "react-icons/fa";
+import { FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
 
 export const metadata = {
   title: "Contact - Ayon Bit",
@@ -47,13 +47,7 @@ const contactInfo = [
     href: "mailto:ayonbit@gmail.com",
     schemaType: "email",
   },
-  {
-    icon: <FaPhone className="text-xl sm:text-2xl" aria-hidden="true" />,
-    title: "Phone",
-    description: "+880 1234 567890",
-    href: "tel:+8801234567890",
-    schemaType: "telephone",
-  },
+
   {
     icon: <FaMapMarkedAlt className="text-xl sm:text-2xl" aria-hidden="true" />,
     title: "Address",
@@ -73,7 +67,7 @@ const Contact = () => {
       "@type": "ContactPoint",
       contactType: "customer service",
       email: "ayonbit@gmail.com",
-      telephone: "+880 1723924834",
+
       areaServed: "Worldwide",
       availableLanguage: "English",
     },

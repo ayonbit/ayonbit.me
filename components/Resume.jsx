@@ -10,7 +10,6 @@ import {
 import { easeIn, motion } from "framer-motion";
 import {
   FaBootstrap,
-  FaCss3,
   FaFigma,
   FaGithub,
   FaHtml5,
@@ -24,8 +23,11 @@ import {
   SiFirebase,
   SiMongodb,
   SiNextdotjs,
+  SiPostgresql,
+  SiPrisma,
   SiShopify,
   SiTailwindcss,
+  SiTypescript,
   SiWordpress,
 } from "react-icons/si";
 
@@ -127,11 +129,13 @@ const skills = {
   ),
   skillList: [
     { icon: <FaHtml5 />, name: "HTML5" },
-    { icon: <FaCss3 />, name: "CSS3" },
-    { icon: <FaBootstrap />, name: "Bootstrap" },
-    { icon: <FaJs />, name: "JavaScript" },
     { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+    { icon: <FaBootstrap />, name: "Bootstrap" },
+    { icon: <SiTypescript />, name: "TypeScript" },
+    { icon: <FaJs />, name: "JavaScript" },
     { icon: <SiMongodb />, name: "MongoDB" },
+    { icon: <SiPostgresql />, name: "PostgreSQL" },
+    { icon: <SiPrisma />, name: "Prisma" },
     { icon: <SiExpress />, name: "Express.js" },
     { icon: <FaReact />, name: "React.js" },
     { icon: <FaNodeJs />, name: "Node.js" },

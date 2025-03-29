@@ -1,13 +1,23 @@
 export default function robots() {
+  const baseUrl =
+    process.env.BASE_URL?.replace(/\/$/, "") || "https://ayonbit.me";
+
   return {
     rules: [
       {
-        userAgent: "*", // Applies to all user agents
-        allow: "/", // Allows crawling of the entire website
+        userAgent: "*",
+        allow: "/",
+        // Essential Next.js disallows
+        disallow: [
+          "/_next/", // Next.js internal paths
+          "/api/", // API routes
+          "/private/", // Private sections
+          "/*.json$", // JSON files
+        ],
       },
     ],
-    sitemap: process.env.BASE_URL
-      ? `${process.env.BASE_URL}/sitemap.xml` // Use the environment variable for BASE_URL if available
-      : "https://ayonbit.me/sitemap.xml", // Default sitemap URL if BASE_URL is not set
+    sitemap: `${baseUrl}/sitemap.xml`,
+    // Optional but recommended for SEO
+    host: baseUrl,
   };
 }

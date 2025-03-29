@@ -1,46 +1,95 @@
 import ContactForm from "@/components/ContactForm";
-import { FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
+import { FaEnvelope, FaMapMarkedAlt, FaPhone } from "react-icons/fa";
 
-// SEO Metadata
 export const metadata = {
-  title: "Contact - AyonBit",
+  title: "Contact - Ayon Bit",
   description:
-    "Feel free to reach out with any ideas. I'll get back to you promptly.",
-  url: `${process.env.BASE_URL}/contact`,
+    "Get in touch with Ayon Bit, Full Stack Developer. Available for new projects and collaborations. Contact via email or the provided form.",
+  alternates: {
+    canonical: `${process.env.BASE_URL}/contact`,
+  },
   openGraph: {
-    type: "website",
-    siteName: "AyonBit",
-    title: "Contact - AyonBit",
+    title: "Contact - Ayon Bit | Full Stack Developer",
     description:
-      "Feel free to reach out with any ideas. I'll get back to you promptly.",
+      "Contact Ayon Bit for web development projects, technical consultations, or collaboration opportunities.",
     url: `${process.env.BASE_URL}/contact`,
+    images: [
+      {
+        url: `${process.env.BASE_URL}/images/contact-og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "Contact Ayon Bit - Full Stack Developer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@ayonbit",
-    title: "Contact - AyonBit",
+    title: "Contact - Ayon Bit | Full Stack Developer",
     description:
-      "Feel free to reach out with any ideas. I'll get back to you promptly.",
+      "Get in touch with Ayon Bit for web development projects and technical consultations.",
+    images: [`${process.env.BASE_URL}/images/contact-twitter-image.png`],
   },
+  keywords: [
+    "contact web developer",
+    "hire full stack developer",
+    "web development consultation",
+    "technical support contact",
+    "e-commerce developer contact",
+    "Next.js developer contact",
+  ],
 };
 
-// Static Contact Info Data
 const contactInfo = [
   {
     icon: <FaEnvelope className="text-xl sm:text-2xl" aria-hidden="true" />,
     title: "Email",
     description: "ayonbit@gmail.com",
+    href: "mailto:ayonbit@gmail.com",
+    schemaType: "email",
+  },
+  {
+    icon: <FaPhone className="text-xl sm:text-2xl" aria-hidden="true" />,
+    title: "Phone",
+    description: "+880 1234 567890",
+    href: "tel:+8801234567890",
+    schemaType: "telephone",
   },
   {
     icon: <FaMapMarkedAlt className="text-xl sm:text-2xl" aria-hidden="true" />,
     title: "Address",
     description: "Incognito Solution, Bangladesh",
+    schemaType: "address",
   },
 ];
 
 const Contact = () => {
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contact Ayon Bit",
+    description: metadata.description,
+    url: `${process.env.BASE_URL}/contact`,
+    potentialAction: {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      email: "ayonbit@gmail.com",
+      telephone: "+880 1723924834",
+      areaServed: "Worldwide",
+      availableLanguage: "English",
+    },
+  };
+
   return (
-    <section className="py-6 px-4 sm:px-6 md:px-8">
+    <section
+      className="py-6 px-4 sm:px-6 md:px-8"
+      aria-labelledby="contact-heading"
+    >
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }}
+      />
+
       <div className="container mx-auto">
         <div className="flex flex-col gap-8 xl:flex-row xl:gap-[30px]">
           {/* Contact Info Section */}
@@ -67,9 +116,22 @@ const Contact = () => {
                     {/* Contact Details */}
                     <div className="flex-1">
                       <p className="text-white/70 font-medium">{item.title}</p>
-                      <h3 className="text-base sm:text-lg font-semibold">
-                        {item.description}
-                      </h3>
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          className="text-base sm:text-lg font-semibold hover:text-accent transition-colors"
+                          itemProp={item.schemaType}
+                        >
+                          {item.description}
+                        </a>
+                      ) : (
+                        <span
+                          className="text-base sm:text-lg font-semibold"
+                          itemProp={item.schemaType}
+                        >
+                          {item.description}
+                        </span>
+                      )}
                     </div>
                   </li>
                 ))}

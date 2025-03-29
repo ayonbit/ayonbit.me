@@ -2,7 +2,7 @@ import ContactForm from "@/components/ContactForm";
 import { FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
 
 export const metadata = {
-  title: "Contact - Ayon Bit",
+  title: "Contact",
   description:
     "Get in touch with Ayon Bit, Full Stack Developer. Available for new projects and collaborations. Contact via email or the provided form.",
   alternates: {

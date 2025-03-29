@@ -1,7 +1,7 @@
 import Work from "@/components/Work";
 
 export const metadata = {
-  title: "Portfolio - Ayon Bit | Recent Projects",
+  title: "Portfolio | Recent Projects",
   description:
     "Explore my portfolio of recent web development projects including full-stack applications, e-commerce solutions, and UI/UX designs. See examples of my work with Next.js, React, Shopify, and more.",
   alternates: {

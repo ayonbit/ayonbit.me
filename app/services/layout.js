@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Services - Ayon Bit",
+  title: "Services",
   description:
     "Comprehensive services including dynamic web development, UI/UX design, Shopify store management, and administrative support. Custom solutions for your business needs.",
   alternates: {

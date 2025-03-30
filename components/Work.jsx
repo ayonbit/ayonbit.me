@@ -42,13 +42,13 @@ const projects = [
   {
     num: "03",
     category: "FullStack",
-    title: "RealTime Chat App",
+    title: "E-commerce Website",
     description:
-      "RealTime chat application enables users to exchange messages and communicate with each other in real-time. It allows individuals to have conversations, share information, and collaborate instantly over the Internet.",
-    stack: ["Firebase", "Zustand", "ReactJs", "NodeJs", "TimeAgo"],
-    image: "/assets/work/Chat_App.png",
-    live: "https://chatapp-firebase-self.vercel.app",
-    github: "https://github.com/ayonbit/chatapp_firebase",
+      "Developed a fully-featured e-commerce platform with a focus on user experience and performance.",
+    stack: ["MongoDB", "ExpressJs", "ReactJs", "NodeJs", "NextJs"],
+    image: "/assets/work/ecomWeb.png",
+    live: "",
+    github: "",
   },
   {
     num: "04",
